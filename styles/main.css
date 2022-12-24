@@ -74,11 +74,11 @@ body {
   # COLORS
 \*------------------------------------*/
 :root {
-  --bg: hsl(0, 0%, 100%);
-  --top-bg-pattern: hsl(225, 100%, 98%);
-  --card-bg: hsl(227, 47%, 96%);
-  --text: hsl(228, 12%, 44%);
-  --text-2: hsl(230, 17%, 14%);
+  --bg-light: hsl(0, 0%, 100%);
+  --top-bg-pattern-light: hsl(225, 100%, 98%);
+  --card-bg-light: hsl(227, 47%, 96%);
+  --text-light: hsl(228, 12%, 44%);
+  --text-2-light: hsl(230, 17%, 14%);
   --bg-dark: hsl(230, 17%, 14%);
   --top-bg-pattern-dark: hsl(232, 19%, 15%);
   --card-bg-dark: hsl(228, 28%, 20%);
@@ -86,6 +86,15 @@ body {
   --text-2-dark: hsl(0, 0%, 100%);
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: var(--bg-light);
+    --top-bg-pattern: var(--top-bg-pattern-light);
+    --card-bg: var(--card-bg-light);
+    --text: var(--text-light);
+    --text-2: var(--text-2-light);
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: var(--bg-dark);
@@ -95,6 +104,22 @@ body {
     --text-2: var(--text-2-dark);
   }
 }
+[color-scheme=light] {
+  --bg: var(--bg-light);
+  --top-bg-pattern: var(--top-bg-pattern-light);
+  --card-bg: var(--card-bg-light);
+  --text: var(--text-light);
+  --text-2: var(--text-2-light);
+}
+
+[color-scheme=dark] {
+  --bg: var(--bg-dark);
+  --top-bg-pattern: var(--top-bg-pattern-dark);
+  --card-bg: var(--card-bg-dark);
+  --text: var(--text-dark);
+  --text-2: var(--text-2-dark);
+}
+
 body {
   position: relative;
   display: flex;

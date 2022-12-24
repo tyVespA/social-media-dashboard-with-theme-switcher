@@ -97,17 +97,27 @@ $instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
 $youtube:     hsl(348, 97%, 39%);
 
 :root {
-  --bg:              hsl(0, 0%, 100%);
-  --top-bg-pattern:  hsl(225, 100%, 98%);
-  --card-bg:         hsl(227, 47%, 96%);
-  --text:            hsl(228, 12%, 44%);
-  --text-2:          hsl(230, 17%, 14%);
+  --bg-light:              hsl(0, 0%, 100%);
+  --top-bg-pattern-light:  hsl(225, 100%, 98%);
+  --card-bg-light:         hsl(227, 47%, 96%);
+  --text-light:            hsl(228, 12%, 44%);
+  --text-2-light:          hsl(230, 17%, 14%);
 
   --bg-dark:               hsl(230, 17%, 14%);
   --top-bg-pattern-dark:   hsl(232, 19%, 15%);
   --card-bg-dark:          hsl(228, 28%, 20%);
   --text-dark:             hsl(228, 34%, 66%);
   --text-2-dark:           hsl(0, 0%, 100%);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: var(--bg-light);
+    --top-bg-pattern: var(--top-bg-pattern-light);
+    --card-bg: var(--card-bg-light);
+    --text: var(--text-light);
+    --text-2: var(--text-2-light);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -120,43 +130,18 @@ $youtube:     hsl(348, 97%, 39%);
   }
 }
 
-// //default theme
+[color-scheme = "light"] {
+  --bg: var(--bg-light);
+  --top-bg-pattern: var(--top-bg-pattern-light);
+  --card-bg: var(--card-bg-light);
+  --text: var(--text-light);
+  --text-2: var(--text-2-light);
+}
 
-// $bg:              hsl(0, 0%, 100%);
-// $top-bg-pattern:  hsl(225, 100%, 98%);
-// $card-bg:         hsl(227, 47%, 96%);
-// $text:            hsl(228, 12%, 44%);
-// $text-2:          hsl(230, 17%, 14%);
-
-// //light theme
-
-// $bg-light:              hsl(0, 0%, 100%);
-// $top-bg-pattern-light:  hsl(225, 100%, 98%);
-// $card-bg-light:         hsl(227, 47%, 96%);
-// $text-light:            hsl(228, 12%, 44%);
-// $text-2-light:          hsl(230, 17%, 14%);
-
-// @media (prefers-color-scheme: light) {
-//   $bg: $bg-light;
-//   $top-bg-pattern: $top-bg-pattern-light;
-//   $card-bg: $card-bg-light;
-//   $text: $text-light;
-//   $text-2: $text-2-light;
-// }
-
-// //dark theme
-
-// $bg-dark:               hsl(230, 17%, 14%);
-// $top-bg-pattern-dark:   hsl(232, 19%, 15%);
-// $card-bg-dark:          hsl(228, 28%, 20%);
-// $text-dark:             hsl(228, 34%, 66%);
-// $text-2-dark:           hsl(0, 0%, 100%);
-
-// @media (prefers-color-scheme: dark) {
-//   $bg: $bg-dark;
-//   $top-bg-pattern: $top-bg-pattern-dark;
-//   $card-bg: $card-bg-dark;
-//   $text: $text-dark;
-//   $text-2: $text-2-dark;
-  
-// }
+[color-scheme = "dark"] {
+  --bg: var(--bg-dark);
+  --top-bg-pattern: var(--top-bg-pattern-dark);
+  --card-bg: var(--card-bg-dark);
+  --text: var(--text-dark);
+  --text-2: var(--text-2-dark);
+}

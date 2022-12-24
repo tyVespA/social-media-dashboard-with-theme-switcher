@@ -4,6 +4,13 @@
 
 ## Welcome! 👋
 
+Skills learned: 
+
+- set up color themes that toggle depending on the users preferred color scheme
+- store variables in local storage
+- update stored variables
+- get and update :root variables
+
 Thanks for checking out this front-end coding challenge.
 
 [Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.

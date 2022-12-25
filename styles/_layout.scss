@@ -35,6 +35,11 @@ main {
     background-color: var(--card-bg);
     border-radius: 10px;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--hover);
+    }
   }
   
   .positive, .negative {
@@ -88,6 +93,11 @@ main {
       display: flex;
       justify-content: space-between;
       gap: 20px;
+
+      .theme-label {
+        // display: block;
+        // margin-right: 50px;
+      }
     }
   }
 

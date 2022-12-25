@@ -1,1 +1,36 @@
 @use "./base" as *;
+
+.toggle-button {
+  position: relative;
+  width: 50px;
+  height: 25px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: var(--toggle);
+  transition: 0.3s;
+  border-radius: 100px;
+}
+
+.checkbox-label input {
+  display: none;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 2px;
+  bottom: 2.5px;
+  background-color: var(--card-bg);
+  transition: 0.3s;
+  border-radius: 50px;
+}
+
+input:checked + .slider::before {
+  transform: translateX(25px);
+}

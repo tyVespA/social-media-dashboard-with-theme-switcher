@@ -1,4 +1,5 @@
 const themeToggle = document.querySelector("#theme-toggle");
+const activeThemeLabel = document.querySelector(".active-theme");
 
 function getCurrentTheme(){
   let theme = window.matchMedia("(prefers-color-scheme: light)"). matches;
@@ -23,7 +24,7 @@ themeToggle.addEventListener("click", () => {
   if (theme === "light") {
     theme = "dark"
   } else {
-    theme = "light"
+    theme = "light" 
   }
   
   localStorage.setItem("default-theme", `${theme}`);

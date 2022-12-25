@@ -79,11 +79,14 @@ body {
   --card-bg-light: hsl(227, 47%, 96%);
   --text-light: hsl(228, 12%, 44%);
   --text-2-light: hsl(230, 17%, 14%);
+  --hover-light: #E1E3F0;
   --bg-dark: hsl(230, 17%, 14%);
   --top-bg-pattern-dark: hsl(232, 19%, 15%);
   --card-bg-dark: hsl(228, 28%, 20%);
   --text-dark: hsl(228, 34%, 66%);
   --text-2-dark: hsl(0, 0%, 100%);
+  --hover-dark: #333A56;
+  --toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 }
 
 @media (prefers-color-scheme: light) {
@@ -93,6 +96,7 @@ body {
     --card-bg: var(--card-bg-light);
     --text: var(--text-light);
     --text-2: var(--text-2-light);
+    --hover: var(--hover-light);
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -102,6 +106,7 @@ body {
     --card-bg: var(--card-bg-dark);
     --text: var(--text-dark);
     --text-2: var(--text-2-dark);
+    --hover: var(--hover-dark);
   }
 }
 [color-scheme=light] {
@@ -110,6 +115,7 @@ body {
   --card-bg: var(--card-bg-light);
   --text: var(--text-light);
   --text-2: var(--text-2-light);
+  --hover: var(--hover-light);
 }
 
 [color-scheme=dark] {
@@ -118,6 +124,45 @@ body {
   --card-bg: var(--card-bg-dark);
   --text: var(--text-dark);
   --text-2: var(--text-2-dark);
+  --hover: var(--hover-dark);
+}
+
+.toggle-button {
+  position: relative;
+  width: 50px;
+  height: 25px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--toggle);
+  transition: 0.3s;
+  border-radius: 100px;
+}
+
+.checkbox-label input {
+  display: none;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 2px;
+  bottom: 2.5px;
+  background-color: var(--card-bg);
+  transition: 0.3s;
+  border-radius: 50px;
+}
+
+input:checked + .slider::before {
+  transform: translateX(25px);
 }
 
 body {
@@ -151,6 +196,10 @@ main .item {
   background-color: var(--card-bg);
   border-radius: 10px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+main .item:hover {
+  background-color: var(--hover);
 }
 main .positive, main .negative {
   display: flex;
